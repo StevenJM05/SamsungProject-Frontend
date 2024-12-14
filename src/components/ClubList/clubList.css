@@ -1,0 +1,140 @@
+.club-list-card {
+  max-width: 900px;
+  margin-left: 300px;
+  padding: 20px;
+  margin-top: 10px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: #695cfe
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  color: #e63946;
+}
+
+.logo-liga {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.club-list {
+  margin-left: 250px;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.club-list h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #e63946;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.club-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.club-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(122, 101, 226, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-item:hover {
+  transform: scale(1.1);
+  box-shadow:#695cfe;
+  
+}
+
+.club-logo {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  image-rendering: crisp-edges;
+}
+
+.club-name {
+  font-size: 1.2rem;
+  color: #333;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  background-color: #e63946;
+  color: #fff;
+  border: 1px solid #e63946;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination span{
+  color: #333;
+}
+
+.pagination button:hover {
+  background-color: #b02634;
+  border-color: #b02634;
+}
+
+.pagination button:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .club-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .club-item {
+    width: 90%;
+  }
+
+  .club-list {
+    margin-left: 0;
+    padding: 10px;
+  }
+}
