@@ -34,7 +34,7 @@ const Sidebar = () => {
                 </a>
               </li>
               <li className="nav-link">
-                <a href="/escuelas">
+                <a href="/clubes">
                   <i className="fa-solid fa-school icon"></i>
                   <span className="text nav-text">Clubes</span>
                 </a>

@@ -11,11 +11,13 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.1",
+    "axios": "^1.7.9",
     "boxicons": "^2.1.4",
     "lista_clubes": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-paginate": "^8.2.0"
+    "react-paginate": "^8.2.0",
+    "react-router-dom": "^7.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

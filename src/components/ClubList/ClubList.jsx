@@ -3,7 +3,7 @@ import "./clubList.css";
 
 const LogoLiga = "LaLiga.png";
 
-const ClubList = () => {
+const ClubList = ({ onClubSelect }) => {
   const clubs = [
     { name: "Athletic Club", logo: "Athletic.png" },
     { name: "Atlético Madrid", logo: "Atletico_Madrid.png" },
@@ -36,11 +36,6 @@ const ClubList = () => {
     }
   };
 
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-    setCurrentPage(1); 
-  };
-
   return (
     <div className="club-list-card">
       <div className="card-header">
@@ -50,13 +45,17 @@ const ClubList = () => {
           type="text"
           placeholder="Buscar clubes..."
           value={searchQuery}
-          onChange={handleSearchChange}
+          onChange={(e) => setSearchQuery(e.target.value)}
           className="search-input"
         />
       </div>
       <div className="club-container">
         {currentClubs.map((club, index) => (
-          <div key={index} className="club-item">
+          <div
+            key={index}
+            className="club-item"
+            onClick={() => onClubSelect(club)} // Notificar selección
+          >
             <img
               src={`/src/assets/images/${club.logo}`}
               alt={`${club.name} logo`}
