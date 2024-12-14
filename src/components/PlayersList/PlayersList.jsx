@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 import "./playersList.css";
 
 const PlayersList = ({ club, onBack }) => {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const playersPerPage = 6; 
+  const playersPerPage = 6;
+
+  const navigate = useNavigate(); // Inicializar useNavigate
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -31,6 +34,11 @@ const PlayersList = ({ club, onBack }) => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  // Manejador de clic para navegar a la página del jugador
+  const handlePlayerClick = (playerId) => {
+    navigate(`/players/${playerId}`); // Navegar a la ruta dinámica
+  };
+
   return (
     <div className="players-list">
       <div className="card-header">
@@ -50,7 +58,11 @@ const PlayersList = ({ club, onBack }) => {
         <div>
           <div className="players-grid">
             {currentPlayers.map((player) => (
-              <div key={player.id} className="player-card">
+              <div
+                key={player.id}
+                className="player-card"
+                onClick={() => handlePlayerClick(player.id)} // Asignar el manejador de clic
+              >
                 <img
                   src={player.photo}
                   alt={player.name}

@@ -1,26 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./clubList.css";
 
 const LogoLiga = "LaLiga.png";
 
 const ClubList = ({ onClubSelect }) => {
   const clubs = [
-    { name: "Athletic Club", logo: "Athletic.png" },
-    { name: "Atlético Madrid", logo: "Atletico_Madrid.png" },
-    { name: "FC Barcelona", logo: "FC_BARCELONA.png" },
-    { name: "Real Madrid", logo: "Real_Madrid.png" },
-    { name: "Real Sociedad", logo: "RealSociedad.png" },
-    { name: "Villarreal", logo: "Villarreal.png" },
-    { name: "Celta de Vigo", logo: "Celta.png" },
-    { name: "Betis", logo: "Betis.png" },
-    { name: "Mallorca", logo: "Mallorca.png" },
-    { name: "Osasuna", logo: "Osasuna.png" },
-    { name: "Girona FC", logo: "Gironaa.png" },
+    { id: 1, name: "Athletic Club", logo: "Athletic.png" },
+    { id: 2, name: "Atlético Madrid", logo: "Atletico_Madrid.png" },
+    { id: 3, name: "FC Barcelona", logo: "FC_BARCELONA.png" },
+    { id: 4, name: "Real Madrid", logo: "Real_Madrid.png" },
+    { id: 5, name: "Real Sociedad", logo: "RealSociedad.png" },
+    { id: 6, name: "Villarreal", logo: "Villarreal.png" },
+    { id: 7, name: "Celta de Vigo", logo: "Celta.png" },
+    { id: 8, name: "Betis", logo: "Betis.png" },
+    { id: 9, name: "Mallorca", logo: "Mallorca.png" },
+    { id: 10, name: "Osasuna", logo: "Osasuna.png" },
+    { id: 11, name: "Girona FC", logo: "Gironaa.png" },
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const clubsPerPage = 6;
+
+  const navigate = useNavigate();
 
   const filteredClubs = clubs.filter((club) =>
     club.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -34,6 +37,11 @@ const ClubList = ({ onClubSelect }) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
     }
+  };
+
+  const handleClubClick = (club) => {
+    onClubSelect(club); 
+    navigate(`/clubs/${club.id}/players`); 
   };
 
   return (
@@ -50,11 +58,11 @@ const ClubList = ({ onClubSelect }) => {
         />
       </div>
       <div className="club-container">
-        {currentClubs.map((club, index) => (
+        {currentClubs.map((club) => (
           <div
-            key={index}
+            key={club.id}
             className="club-item"
-            onClick={() => onClubSelect(club)} // Notificar selección
+            onClick={() => handleClubClick(club)} 
           >
             <img
               src={`/src/assets/images/${club.logo}`}

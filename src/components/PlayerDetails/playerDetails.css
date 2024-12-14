@@ -1,0 +1,107 @@
+/* Estilo General */
+.player-details-container {
+    width: 99%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: "Arial", sans-serif;
+    margin-left: 250px;
+  }
+  
+  /* Cabecera con Imagen y Nombre */
+  .player-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .player-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+  }
+  
+  .player-info h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .player-info p {
+    margin: 0.2rem 0;
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  /* Estadísticas */
+  .player-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  
+  .stat-item h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #007bff;
+  }
+  
+  .stat-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Información Adicional */
+  .player-extra-info {
+    background-color: #695cfe;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .player-extra-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #f8f9fa;
+  }
+  
+  /* Botones */
+  .player-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .action-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button.primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .action-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .action-button:nth-child(1) {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .action-button:nth-child(1):hover {
+    background-color: #5a6268;
+  }
+  
