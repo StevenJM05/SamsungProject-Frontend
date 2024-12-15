@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaFutbol, FaFlag, FaUsers, FaTrophy, FaRunning, FaStar } from "react-icons/fa"; // Importa íconos
 import "./playerDetails.css";
 
 const PlayerDetails = () => {
@@ -36,17 +37,21 @@ const PlayerDetails = () => {
 
   return (
     <div className="player-details-container">
-      {/* Sección Principal */}
+      {/* Sección Principal con Imagen y Nombre */}
       <div className="player-header">
         <img src={player.photo} alt={player.name} className="player-photo" />
         <div className="player-info">
-          <h1 className="player-name">{player.name}</h1>
-          <p className="player-position">{player.nationality}</p>
-          <p className="player-team">{player.team}</p>
+          <h1>{player.name}</h1>
+          <p className="player-position">
+            <FaFutbol /> {player.position}
+          </p>
+          <p className="player-team">
+            <FaUsers /> {player.team}
+          </p>
         </div>
       </div>
 
-      {/* Estadísticas */}
+      {/* Estadísticas Resaltadas */}
       <div className="player-stats">
         <div className="stat-item">
           <h3>{player.goals}</h3>
@@ -63,22 +68,34 @@ const PlayerDetails = () => {
       </div>
 
       {/* Información Adicional */}
-      <div className="player-extra-info">
-        <p>
-          <strong>Edad:</strong> {player.age}
-        </p>
-        <p>
-          <strong>Valor de Mercado:</strong> ${player.marketValue}K
-        </p>
+      <div className="player-additional-info">
+        <div>
+          <FaFlag /> <strong>Nacionalidad:</strong> {player.nationality}
+        </div>
+        <div>
+          <FaRunning /> <strong>Altura:</strong> {player.height} m
+        </div>
+        <div>
+          <FaRunning /> <strong>Peso:</strong> {player.weight} kg
+        </div>
+        <div>
+          <FaStar /> <strong>Rating:</strong> {player.rating} / 10
+        </div>
+        <div>
+          <FaTrophy /> <strong>Títulos ganados:</strong> {player.trophies}
+        </div>
       </div>
 
-      {/* Botones */}
+      {/* Botones de Acción */}
       <div className="player-actions">
-        <button className="action-button" onClick={() => navigate(-1)}>
+        <button
+          className="action-button primary"
+          onClick={() => navigate(-1)} 
+        >
           Volver
         </button>
         <button
-          className="action-button primary"
+          className="action-button secondary"
           onClick={() => alert("¡Estadísticas avanzadas próximamente!")}
         >
           Ver estadísticas completas

@@ -58,14 +58,14 @@
   }
   
   /* Información Adicional */
-  .player-extra-info {
+  .player-additional-info {
     background-color: #695cfe;
     padding: 1rem;
     border-radius: 5px;
     margin-bottom: 1.5rem;
   }
   
-  .player-extra-info p {
+  .player-additional-info p {
     margin: 0.5rem 0;
     font-size: 1rem;
     color: #f8f9fa;
